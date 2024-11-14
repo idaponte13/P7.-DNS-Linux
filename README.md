@@ -3,7 +3,7 @@
 ## Configura un sistema cun servidor DNS e un cliente alpine que cumpla os seguintes requisitos.
 
 >[!NOTE]
->Ao final da explicación mostrarase a o arquivo .yml, conf/named.conf e zonas/db.iago.int con toda a configuración xunta.
+>Nos arquivos subidos .yml, conf/named.conf e zonas/db.iago.int poderemos velos con toda a configuración xunta e comentada.
 
 **Volumen por separado da configuración** 
 
