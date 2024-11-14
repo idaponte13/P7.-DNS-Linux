@@ -30,4 +30,22 @@ forwarders {
         1.1.1.1;  // Servidor DNS de Cloudflare para reenviar consultas.
     };
 ```
-
+**Crear Zona propia**
+    **Rexistros a configurar: NS, A, CNAME, TXT, SOA**  
+Este apartado configurarase dentro do arquivo `db.iago.int` dentro do directorio de `zonas`.  
+```
+$TTL 38400	; 10 hours 40 minutes
+@		IN SOA	ns.iago.int. some.email.address. (
+				10000002   ; serial
+				10800      ; refresh (3 hours)
+				3600       ; retry (1 hour)
+				604800     ; expire (1 week)
+				38400      ; minimum (10 hours 40 minutes)
+				)
+@		IN NS	ns.iago.int.
+ns		IN A		192.28.5.1
+test	IN A		192.28.5.4
+www		IN A		192.28.5.7
+alias	IN CNAME	Practica7
+texto	IN TXT		ejercicio
+```
