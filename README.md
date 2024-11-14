@@ -2,7 +2,7 @@
 
 ## Configura un sistema cun servidor DNS e un cliente alpine que cumpla os seguintes requisitos.
 
->[NOTE]
+>[!NOTE]
 >Ao final da explicación mostrarase a o arquivo .yml con toda a configuración xunta.
 
 **Volumen por separado da configuración** 
