@@ -30,7 +30,7 @@ forwarders {
         1.1.1.1;  // Servidor DNS de Cloudflare para reenviar consultas.
     };
 ```
-**Crear Zona propia**
+**Crear Zona propia**  
     **Rexistros a configurar: NS, A, CNAME, TXT, SOA**  
 Este apartado configurarase dentro do arquivo `db.iago.int` dentro do directorio de `zonas`.  
 ```
