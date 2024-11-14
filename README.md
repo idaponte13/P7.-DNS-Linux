@@ -49,3 +49,31 @@ www		IN A		192.28.5.7
 alias	IN CNAME	Practica7
 texto	IN TXT		ejercicio
 ```
+
+**Cliente con ferramientas de rede**
+
+Primeiro configuraremos no .yml o cliente cunha dirección dentro da mesma subrede e a dirección do servidor na parte de DNS.  
+Unha vez feito isto poderemos acceder ao cliente facendo os comandos `docker compose up` para executar os contenedores e para entrar na terminal do contenedor creado co comando `docker exec -it Prac7_alpine /bin/sh`, no meu caso Prac7_alpine porque chameis asi ao contenedor do cliente. Posteriormente instalaremos dig para ver se podemos conectarnos de forma correcta. Para instalarlo executaremos o comando `apk update && apk add bind-tools`.
+
+Por último faremos al consultas necesarios como o comando `dig ns.iago.int` ou `dig 192.28.5.1`. 
+```
+; <<>> DiG 9.18.27 <<>> ns.iago.int
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 15843
+;; flags: qr aa rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: 8906064d2c684f2f01000000673631a4a0d937572e58c05a (good)
+;; QUESTION SECTION:
+;ns.iago.int.			IN	A
+
+;; ANSWER SECTION:
+ns.iago.int.		38400	IN	A	192.28.5.1
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.11#53(127.0.0.11) (UDP)
+;; WHEN: Thu Nov 14 17:21:40 UTC 2024
+;; MSG SIZE  rcvd: 84
+```
